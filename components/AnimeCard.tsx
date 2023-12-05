@@ -18,7 +18,7 @@ interface Prop {
   index: number;
 }
 
-function AnimeCard({ anime }: Prop) {
+function AnimeCard({ anime, index }: Prop) {
   const variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
@@ -28,7 +28,7 @@ function AnimeCard({ anime }: Prop) {
       variants={variants}
       initial="hidden"
       animate="visible"
-      transition={{ delay: 1, ease: "easeInOut", duration: 0.5 }}
+      transition={{ delay: index * 0.25, ease: "easeInOut", duration: 0.5 }}
       className="max-w-sm rounded relative w-full"
     >
       <div className="relative w-full h-[37vh]">
